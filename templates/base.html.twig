@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}ActusFilm{% endblock %}</title>
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
         {% endblock %}
@@ -13,8 +13,14 @@
     </head>
     <body>
         {% block body %}
-            Salut à tous !!!!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eius impedit omnis porro reiciendis reprehenderit, sapiente suscipit veritatis. Commodi dolore eos expedita molestias nostrum officiis optio perferendis quod temporibus, voluptatibus.
+            <h1>Salut à tous, bienvenue sur ActusFilm (rien à voir avec FilmActu pour mon inspiration sur le nom)</h1>
+            <h2>Retrouvez une sélection de films et de séries</h2>
+            {% for media in medias %}
+                <div style="float: left; width: 10%; margin: 10px">
+                    <div style="font-weight: bold">{{ media.Name }}</div>
+                    <div>{{ media.Synopsis }}</div>
+                </div>
+            {% endfor %}
         {% endblock %}
     </body>
 </html>
